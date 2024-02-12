@@ -16,7 +16,7 @@
 
 - API
     - [서울공공데이터(API)](https://data.seoul.go.kr/dataList/OA-20883/S/1/datasetView.do)
-    - 
+
 - 개발 환경
     - intelliJ IDEA, Maven, Lombok , JDBC
 
