@@ -10,17 +10,14 @@ import java.sql.*;
 
          Connection connection = null;
 
-         try {
-             Class.forName("org.sqlite.JDBC");
-             connection = DriverManager.getConnection(url);
-         } catch (ClassNotFoundException | SQLException e) {
-              System.out.println(e.toString());;
-         }
+         Class.forName("org.sqlite.JDBC");
+         connection = DriverManager.getConnection(url);
 
         return connection;
      }
 
      public static void close(Connection connection, PreparedStatement ps, ResultSet rs) {
+
 
          try {
              if ((rs != null && !rs.isClosed())

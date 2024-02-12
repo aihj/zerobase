@@ -22,6 +22,11 @@ public class historyDAO {
 
         try {
             conn = DBconn.connect();
+            String sql = " insert into search_wifi "
+                    + " (lat, lnt, search_dttm) "
+                    + " values ( ?, ?, ? )";
+
+            ps = conn.prepareStatement(sql);
 
             DateFormatSymbols dfs = new DateFormatSymbols(Locale.KOREAN);
             dfs.setWeekdays(new String[]{
@@ -30,16 +35,9 @@ public class historyDAO {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd '('E')' HH:mm:ss", dfs);
             String strDate = sdf.format(new Date());
 
-            String sql = " insert into search_wifi "
-                    + " (lat, lnt, search_dttm) "
-                    + " values ( ?, ?, ? )";
-
-            ps = conn.prepareStatement(sql);
-
             ps.setString(1, lat);
             ps.setString(2, lnt);
             ps.setString(3, strDate.toString());
-
             ps.executeUpdate();
 
             System.out.println("데이터 저장 완료");
@@ -58,28 +56,24 @@ public class historyDAO {
         ps = null;
         rs = null;
 
-        try {
-            conn = DBconn.connect();
-            String sql = " select * "
-                    + " from search_wifi "
-                    + " order by id desc ";
+        conn = DBconn.connect();
+        String sql = " select * "
+                + " from search_wifi "
+                + " order by id desc ";
 
-            ps = conn.prepareStatement(sql);
-            rs = ps.executeQuery();
+        ps = conn.prepareStatement(sql);
+        rs = ps.executeQuery();
 
-            while (rs.next()) {
-                historyDTO historyDTO = new historyDTO(
-                        rs.getInt("id")
-                        , rs.getString("lat")
-                        , rs.getString("lnt")
-                        , rs.getString("search_dttm")
-                );
-                list.add(historyDTO);
-            }
-        } catch (SQLException e) {
-             System.out.println(e.toString());;
-        } finally {
-            DBconn.close(conn, ps, rs);
+        while (rs.next()) {
+            historyDTO historyDTO = new historyDTO(
+                    rs.getInt("id")
+                    , rs.getString("lat")
+                    , rs.getString("lnt")
+                    , rs.getString("search_dttm")
+            );
+            list.add(historyDTO);
+            
+        DBconn.close(conn, ps, rs);
         }
 
         return list;
@@ -91,18 +85,13 @@ public class historyDAO {
         ps = null;
         rs = null;
 
-        try {
-            conn = DBconn.connect();
-            String sql = "delete from search_wifi where id = ? ";
+        conn = DBconn.connect();
+        String sql = "delete from search_wifi where id = ? ";
 
-            ps = conn.prepareStatement(sql);
-            ps.setInt(1, Integer.parseInt(id));
-            ps.executeUpdate();
+        ps = conn.prepareStatement(sql);
+        ps.setInt(1, Integer.parseInt(id));
+        ps.executeUpdate();
 
-        } catch (SQLException e) {
-             System.out.println(e.toString());;
-        } finally {
-            DBconn.close(conn, ps, rs);
-        }
+        DBconn.close(conn, ps, rs);
     }
 }

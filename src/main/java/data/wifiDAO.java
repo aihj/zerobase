@@ -26,12 +26,12 @@ public class wifiDAO {
 
         int count = 0;
 
-        /* 쿼리 문 설정 */
+
         try {
             connection = DBconn.connect();
             connection.setAutoCommit(false);    //Auto-Commit 해제
 
-            /* Insert 진행 */
+
             String sql = " insert into public_wifi "
                     + " ( x_swifi_mgr_no, x_swifi_wrdofc, x_swifi_main_nm, x_swifi_adres1, x_swifi_adres2, "
                     + " x_swifi_instl_floor, x_swifi_instl_ty, x_swifi_instl_mby, x_swifi_svc_se, x_swifi_cmcwr, "
