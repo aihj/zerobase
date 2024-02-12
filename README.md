@@ -15,7 +15,7 @@
 
 
 ##  ERD
-![Wifi_북마크추가](https://github.com/kdmin0706/Public-Wifi/assets/124044861/e92f07a8-7062-412e-a9a7-6eb6e28b1a9d)
+![Label](https://github.com/aihj/zerobase/blob/master/erd.png?raw=true)
 
 ## 공공 와이파이 DB 저장 시연영상
 [![video Label](http://img.youtube.com/vi/jxV066ZRKK4/0.jpg)](https://youtu.be/jxV066ZRKK4)
