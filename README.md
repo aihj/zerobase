@@ -1,17 +1,31 @@
 ## 서울시 공공 와이파이 
+[기능사항]
+-공공 와이파이 정보 가져오기 기능 구현
+-내 위치 정보를 입력하면 가까운 위치에 있는 와이파이 정보 20개 보여주는 기능 구현
+-내가 입력한 위치정보에 대해서 조회하는 시점에 DB에 히스토리를 저장 및 보여주는 기능 구현
+-데이터베이스는 SQLite 이용 
 
 
-## 
-- Language : `Java`
-- Build : `Maven`
-- Database : `SQLITE`
-- Server : `Tomcat 8.5`
-- JDK : `JDK 1.8`
-- Web : `CSS`, `HTML5`, `JSP`
-- Library : `Lombok`, `Okhttp3`, `Gson`
 
 
-## ❗ 프로젝트 작동 순서 및 기능
+## 💡 사용 기술
+
+-개발 언어: Java , HTML, CSS
+
+- API
+    - [서울공공데이터(API)](https://data.seoul.go.kr/dataList/OA-20883/S/1/datasetView.do)
+    - 
+- 개발 환경
+    - intelliJ IDEA, Maven, Lombok , JDBC
+
+- jdk : jdk 1.8 
+
+- 데이터베이스: SQLITE
+
+- Library: `Lombok`, `Okhttp3`, `Gson`
+
+
+##  프로젝트 작동 순서 및 기능
 
 
 ##  ERD
