@@ -39,9 +39,7 @@ public class historyDAO {
             ps.setString(2, lnt);
             ps.setString(3, strDate.toString());
             ps.executeUpdate();
-
-            System.out.println("데이터 저장 완료");
-
+            
         } catch (SQLException e) {
             System.out.println(e.toString());
         } finally {
