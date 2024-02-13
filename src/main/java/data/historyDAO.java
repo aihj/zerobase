@@ -32,7 +32,7 @@ public class historyDAO {
             dfs.setWeekdays(new String[]{
                     "", "Sun", "Mon","Tues", "Wed", "Thurs","Fri", "Sat"
             });
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd '('E')' HH:mm:ss", dfs);
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일"); 
             String strDate = sdf.format(new Date());
 
             ps.setString(1, lat);
