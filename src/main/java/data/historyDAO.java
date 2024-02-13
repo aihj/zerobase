@@ -28,10 +28,6 @@ public class historyDAO {
 
             ps = conn.prepareStatement(sql);
 
-            DateFormatSymbols dfs = new DateFormatSymbols(Locale.KOREAN);
-            dfs.setWeekdays(new String[]{
-                    "", "Sun", "Mon","Tues", "Wed", "Thurs","Fri", "Sat"
-            });
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일"); 
             String strDate = sdf.format(new Date());
 
