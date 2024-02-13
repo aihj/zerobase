@@ -26,12 +26,9 @@ public class wifiDAO {
 
         int count = 0;
 
-
         try {
             connection = DBconn.connect();
-            connection.setAutoCommit(false);    //Auto-Commit 해제
-
-
+            
             String sql = " insert into public_wifi "
                     + " ( x_swifi_mgr_no, x_swifi_wrdofc, x_swifi_main_nm, x_swifi_adres1, x_swifi_adres2, "
                     + " x_swifi_instl_floor, x_swifi_instl_ty, x_swifi_instl_mby, x_swifi_svc_se, x_swifi_cmcwr, "
@@ -63,14 +60,14 @@ public class wifiDAO {
 
 
                 if ((i + 1) % 1000 == 0) {
-                    int[] result = ps.executeBatch();
+                    int[] result = ps.execute();
                     count += result.length;
                     connection.commit();
                 }
             }
 
 
-            int[] result = ps.executeBatch();
+            int[] result = ps.execute();
             count += result.length;
             connection.commit();
 
@@ -168,7 +165,7 @@ public class wifiDAO {
             ps = connection.prepareStatement(sql);
             ps.setString(1, mgrNo);
 
-            rs = ps.executeQuery();
+            rs = ps.execute();
 
             while (rs.next()) {
                 wifiDTO wifiDTO = data.wifiDTO.builder()
@@ -214,7 +211,7 @@ public class wifiDAO {
             ps = connection.prepareStatement(sql);
 
             ps.setString(1, mgrNo);
-            rs = ps.executeQuery();
+            rs = ps.execute();
 
             while (rs.next()) {
                 wifiDTO.setXSwifiMgrNo(rs.getString("X_SWIFI_MGR_NO"));
