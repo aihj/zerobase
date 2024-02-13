@@ -30,7 +30,7 @@ public class historyDAO {
 
             DateFormatSymbols dfs = new DateFormatSymbols(Locale.KOREAN);
             dfs.setWeekdays(new String[]{
-                    "null",  "일", "월", "화", "수", "목", "금", "토"
+                    "", "Sun", "Mon","Tues", "Wed", "Thurs","Fri", "Sat"
             });
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd '('E')' HH:mm:ss", dfs);
             String strDate = sdf.format(new Date());
