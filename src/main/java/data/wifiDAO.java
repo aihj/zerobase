@@ -39,22 +39,22 @@ public class wifiDAO {
 
                 JsonObject data = (JsonObject) jsonArray.get(i).getAsJsonObject();
 
-                ps.setString(1, data.get("X_SWIFI_MGR_NO").getAsString());
-                ps.setString(2, data.get("X_SWIFI_WRDOFC").getAsString());
-                ps.setString(3, data.get("X_SWIFI_MAIN_NM").getAsString());
-                ps.setString(4, data.get("X_SWIFI_ADRES1").getAsString());
-                ps.setString(5, data.get("X_SWIFI_ADRES2").getAsString());
-                ps.setString(6, data.get("X_SWIFI_INSTL_FLOOR").getAsString());
-                ps.setString(7, data.get("X_SWIFI_INSTL_TY").getAsString());
-                ps.setString(8, data.get("X_SWIFI_INSTL_MBY").getAsString());
-                ps.setString(9, data.get("X_SWIFI_SVC_SE").getAsString());
-                ps.setString(10, data.get("X_SWIFI_CMCWR").getAsString());
-                ps.setString(11, data.get("X_SWIFI_CNSTC_YEAR").getAsString());
-                ps.setString(12, data.get("X_SWIFI_INOUT_DOOR").getAsString());
-                ps.setString(13, data.get("X_SWIFI_REMARS3").getAsString());
-                ps.setString(14, data.get("LAT").getAsString());
-                ps.setString(15, data.get("LNT").getAsString());
-                ps.setString(16, data.get("WORK_DTTM").getAsString());
+                ps.setString(1, data.get("X_SWIFI_MGR_NO").toString());
+                ps.setString(2, data.get("X_SWIFI_WRDOFC").toString());
+                ps.setString(3, data.get("X_SWIFI_MAIN_NM").toString());
+                ps.setString(4, data.get("X_SWIFI_ADRES1").toString());
+                ps.setString(5, data.get("X_SWIFI_ADRES2").toString());
+                ps.setString(6, data.get("X_SWIFI_INSTL_FLOOR").toString());
+                ps.setString(7, data.get("X_SWIFI_INSTL_TY").toString());
+                ps.setString(8, data.get("X_SWIFI_INSTL_MBY").toString());
+                ps.setString(9, data.get("X_SWIFI_SVC_SE").toString());
+                ps.setString(10, data.get("X_SWIFI_CMCWR").toString());
+                ps.setString(11, data.get("X_SWIFI_CNSTC_YEAR").toString());
+                ps.setString(12, data.get("X_SWIFI_INOUT_DOOR").toString());
+                ps.setString(13, data.get("X_SWIFI_REMARS3").toString());
+                ps.setString(14, data.get("LAT").toString());
+                ps.setString(15, data.get("LNT").toString());
+                ps.setString(16, data.get("WORK_DTTM").toString());
 
 
                 if ((i + 1) % 1000 == 0) {
