@@ -105,7 +105,7 @@ public class wifiDAO {
             ps.setDouble(2, Double.parseDouble(lnt));
             ps.setDouble(3, Double.parseDouble(lat));
 
-            rs = ps.executeQuery();
+            rs = ps.execute();
 
             while (rs.next()) {
                 wifiDTO wifiDTO = data.wifiDTO.builder()
