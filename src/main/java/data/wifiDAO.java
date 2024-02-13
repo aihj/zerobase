@@ -16,9 +16,7 @@ public class wifiDAO {
     public static PreparedStatement ps;
 
     public wifiDAO() {
-
     }
-
     public static int inputWifiData(JsonArray jsonArray) {
         connection = null;
         ps = null;
@@ -60,26 +58,19 @@ public class wifiDAO {
 
 
                 if ((i + 1) % 1000 == 0) {
-                    int[] result = ps.execute();
+                    int[] result = ps.executeBatch();
                     count += result.length;
                     connection.commit();
                 }
             }
 
-
-            int[] result = ps.execute();
+            int[] result = ps.executeBatch();
             count += result.length;
             connection.commit();
 
         } catch (SQLException e) {
              System.out.println(e.toString());
-
-            try {
-                connection.rollback();
-            } catch (SQLException sqlException) {
-                System.out.println(e.toString());
-            }
-
+            
         } finally {
             DBconn.close(connection, ps, rs);
         }
